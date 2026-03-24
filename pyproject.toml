@@ -34,6 +34,10 @@ ignore_missing_imports = true
 mypy_path = "src"
 packages = ["audiostim_poc"]
 
+[[tool.mypy.overrides]]
+module = ["scripts.*"]
+disable_error_code = ["no-any-return"]
+
 [tool.ruff]
 target-version = "py312"
 line-length = 120
