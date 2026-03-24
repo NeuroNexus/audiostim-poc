@@ -1,14 +1,12 @@
 # audiostim-poc
 
+Auditory stimulus scripts for use with NeuroNexus Allego.
+
 ## Installation
 
-This project uses `uv` for dependency management.
+### 1. Install `uv`
 
-### Installing `uv`
-
-If you don't have `uv` installed yet, you can do so using the following methods:
-
-**macOS and Linux:**
+**macOS / Linux:**
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -20,34 +18,30 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-For more installation options, see the [uv documentation](https://github.com/astral-sh/uv).
+`uv` will handle the Python installation automatically.
 
-### Project Setup
-
-Once `uv` is installed, run:
+### 2. Clone the repo
 
 ```bash
-uv venv
+git clone git@github.com:NeuroNexus/audiostim-poc.git
+cd audiostim-poc
+```
+
+### 3. Install dependencies
+
+```bash
 uv sync
 ```
 
-## Development
-
-### Running Tests
+## Usage
 
 ```bash
-uv run pytest
+uv run python scripts/run_white_noise.py
 ```
 
-### Linting and Formatting
+## Scripts
 
-```bash
-uv run ruff check .
-uv run ruff format .
-```
+| Script | Description |
+| --- | --- |
+| `run_white_noise.py` | Plays 10 bursts of broadband white noise (200 ms, 75 dB SPL, 500 ms ISI) and toggles DIO pin 0 on each burst for sync with Allego recording |
 
-### Type Checking
-
-```bash
-uv run mypy src
-```

@@ -60,6 +60,3 @@ select = [
 [tool.ruff.lint.isort]
 known-first-party = ["audiostim_poc"]
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
